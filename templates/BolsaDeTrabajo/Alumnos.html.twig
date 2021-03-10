@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="row">
+  <div class="col-12">
+    <h1>Lista de alumnos<h1>
+    <ul class="list-group justify-content-center">
+      {% for alumnos in alumnos %}
+        <li class="col-10">
+        <div class="card-body text-center text-dark">
+            <div class="card-header">
+              {{ alumnos.nombre }}
+              {{ alumnos.apellido }}
+            </div>
+            <div class="card-text">
+              {{ alumnos.tipoDeDocumento }}
+              {{ alumnos.numeroDeDocumento }}
+              {{ alumnos.fechaDeNacimiento|date("m/d/Y") }}
+              {{ alumnos.mail }}
+              {{ alumnos.carrera }}
+              {{ alumnos.tiempoEnCarrera }}
+              {{ alumnos.experienciasPrevias }}
+            </div>
+          </div>
+        </li>
+        {% else %}
+          <li>
+            <p> no hay Alumnos </p>
+          </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %}

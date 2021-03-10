@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<div class="container">
+  {{ form_start(form) }}
+    {{ form_errors(form) }}
+    {{ form_row(form.nombre) }}
+    {{ form_row(form.apellido) }}
+    {{ form_row(form.TipoDeDocumento) }}
+    {{ form_row(form.numeroDeDocumento) }}
+    {{ form_row(form.fechaDeNacimiento) }}
+    {{ form_row(form.mail) }}
+    {{ form_row(form.carrera) }}
+    {{ form_row(form.tiempoEnCarrera) }}
+    {{ form_row(form.experienciasPrevias) }}
+
+  {{ form_end(form) }}
+<div>
+{% endblock %}

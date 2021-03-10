@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+  {{ form_start(form) }}
+
+    {{ form_errors(form) }}
+    {{ form_row(form.nombre) }}
+    {{ form_row(form.cuit) }}
+    {{ form_row(form.provincia) }}
+    {{ form_row(form.localidad) }}
+    {{ form_row(form.direccion) }}
+    {{ form_row(form.telefono) }}
+    {{ form_row(form.mail) }}
+    <div class="col-10 justify-content-center" id="ofertasLaborales_list" data-prototype="{{ form_widget(form.ofertasLaborales.vars.prototype)|e('html_attr') }}">
+      {% for ofertasLaborales in form.ofertasLaborales %}
+        <div class="panel panel-warning">
+          <div class="panel-heading"> Oferta Laboral </div>
+          <div class="panel-body">
+            {{ form_row(ofertasLaborales) }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+  {{ form_end(form) }}
+<div>
+{% endblock %}

@@ -1,0 +1,48 @@
+framework:
+    workflows:
+        alumno:
+            type: workflow
+            marking_store:
+                type: method
+                property: transitionContext
+            supports:
+                - App\Entity\Alumno
+            initial_marking: borrador
+            places:
+                - borrador
+                - pendiente
+                - aprobado
+                - rechasar
+            transitions:
+                inicio: 
+                    from: borrador
+                    to: pendiente
+                confirmacion:
+                    from: pendiente  
+                    to: aprobado
+                rechasado:
+                    from: pendiente
+                    to: rechasar
+        empresa:
+            type: workflow
+            marking_store:
+                type: method
+                property: transitionContext
+            supports:
+                - App\Entity\Empresa
+            initial_marking: borrador
+            places:
+                - borrador
+                - pendiente
+                - aprobado
+                - rechasar
+            transitions:
+                inicio: 
+                    from: borrador
+                    to: pendiente
+                confirmacion:
+                    from: pendiente  
+                    to: aprobado
+                rechasado:
+                    from: pendiente
+                    to: rechasar

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="row">
+  <div class="col-12">
+    <h1>Lista de ofertas<h1>
+    <ul class="list-group justify-content-center">
+      {% for empresa in empresas %}
+        <li class="col-10">
+          <div class="card-body text-center text-dark">
+            <div class="card-header">
+              {{empresa.nombre}}
+            </div>
+                {% for ofertaLaboral in empresa.ofertasLaborales %}
+                <div class="card-text">
+                  {{ofertaLaboral.descripcion}}
+                </div>
+                {% endfor %}
+            <a class="btn btn-primary" href=" {{ path('app_homepage',{ id: empresa.id })}} "> mirar oferta </a>
+          </div>
+        </li>
+        {% else %}
+          <li>
+            <p> no hay ofertas </p>
+          </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %}

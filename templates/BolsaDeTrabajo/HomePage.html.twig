@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <div class="col-12 justify-content-center">
+      <div class="row justify-content-center">
+          <div class="col-6">
+            <a class="btn btn-block btn-primary p-4" href="{{path('app_FormularioAlumno')}}">
+              <p class="pl-2 d-inline font-weight-bolder" style="color: #444;">Formulario para alumnos</p>
+            </a> 
+          </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <a class="btn btn-block btn-primary p-4" href="{{path('app_FormularioEmpresa')}}">
+            <p class="pl-2 d-inline font-weight-bolder" style="color: #444;">Formulario para empresas</p>
+          </a> 
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <a class="btn btn-block btn-primary p-4" href="{{path('app_Alumnos')}}">
+              <p class="pl-2 d-inline font-weight-bolder" style="color: #444;">listado de alumnos</p>
+          </a>
+        </div> 
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <a class="btn btn-block btn-primary p-4" href="{{path('app_ofertasEmpresas')}}">
+              <p class="pl-2 d-inline font-weight-bolder" style="color: #444;">listado de trabajos</p>
+          </a>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}
